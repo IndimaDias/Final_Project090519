@@ -7,7 +7,7 @@ class Todo extends React.Component{
 
   render(){
     return(
-      <div className = "container-fluid bg">
+      <div className = "bg">
         <div className = "row">
             <div className = "colLabel col-6">
                   <p className = "label">More To Do? </p>

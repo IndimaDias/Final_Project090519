@@ -249,7 +249,7 @@ class Calendar extends React.Component {
       <div>
         { this.state.show ? this.renderModal():""}
 
-        <div className=" container calendar">
+        <div className="container calendar">
           {this.renderHeader()}
           {this.renderDays()}
           {this.renderCells()}
