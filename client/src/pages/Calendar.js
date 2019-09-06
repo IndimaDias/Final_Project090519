@@ -37,7 +37,7 @@ class Calendar extends React.Component {
 
 
   openEventModal = (event) => {
- 
+ console.log("test");
     this.setState({
         show: true
     });
@@ -216,7 +216,7 @@ class Calendar extends React.Component {
                 {daysEvents.map(today => (                  
                    <ButtonTag
                    id = {today.id}
-                   evntType = {"C"}                   
+                  // evntType = {"C"}                   
                    event = {today}
                    onClick = {(ev) =>this.openEventModal(ev)}/>
 
@@ -249,7 +249,8 @@ class Calendar extends React.Component {
       <div>
         { this.state.show ? this.renderModal():""}
 
-        <div className="container calendar">
+        <div className="container calendar"
+        style={{height:"100vh"}}> 
           {this.renderHeader()}
           {this.renderDays()}
           {this.renderCells()}

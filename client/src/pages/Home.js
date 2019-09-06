@@ -9,7 +9,25 @@ import "./css/home.css";
 
 
 class Home extends React.Component{
+
+  state = {
+    Email:"",
+    password : ""
+  }
  
+  login = () =>{
+    console.log(this.state.Email);
+  }
+  
+  handleInputChange = (ev) => {
+    const value = ev.target.value;
+       
+    const name = ev.target.name;
+
+    this.setState({[name] : value});
+  }
+
+
   render(){
   return (
 
@@ -18,32 +36,43 @@ class Home extends React.Component{
       
       <div className="login-reg-panel">
           <div className="login-info-box">
-           <h1>MONDAY</h1>
+           <h1>DADDY'S DAY</h1>
           </div>
 
           <div className="register-info-box">
             <h2>Don't have an account?</h2>
-            <p>Lorem ipsum dolor sit amet</p>
+            <p>Daady , Moddy, kids ?? all can register</p>
             <label id="label-login" for="log-login-show">Register</label>
-            <input type="radio" name="active-log-panel" id="log-login-show"/>
+            
           </div>
 
           <div className="white-panel">
             <div className="login-show">
               <h2>LOGIN</h2>
-              <input type="text" placeholder="Email"/>
-              <input type="password" placeholder="Password"/>
-              <input type="button" value="Login"/>
-              <a href="">Forgot password?</a>
+              <form>
+                <input className = "form-control" 
+                       type="text" 
+                       placeholder="Email"
+                       name = "Email"
+                       value = {this.state.Email}
+                       onChange = {this.handleInputChange}/>
+
+                <input className = "form-control" 
+                       type="password"
+                       name = "password" 
+                       placeholder="Password"
+                       value = {this.state.password}                      
+                       onChange = {this.handleInputChange}/>
+
+                <input type="button" 
+                       value="Login"
+                       onClick = {this.login}
+                />
+                {/* <button type="submit" className = "btn btn-dark">Login</button> */}
+                <a href="">Forgot password?</a>
+              </form>
             </div>
-{/* 
-            <div className="register-show">
-              <h2>REGISTER</h2>
-              <input type="text" placeholder="Email"/>
-              <input type="password" placeholder="Password"/>
-              <input type="password" placeholder="Confirm Password"/>
-              <input type="button" value="Register"/>
-            </div> */}
+
           </div>
       </div>
     </div>

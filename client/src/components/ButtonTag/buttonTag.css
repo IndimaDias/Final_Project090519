@@ -1,5 +1,7 @@
 .eventTag{
     background-color: #63ff1a;
-    margin : 5px;
+    margin : 2px;
+    position: relative;
     z-index: 1;
+   
 }
