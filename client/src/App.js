@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Switch,Route } from "react-router-dom";
 import Calendar from "./pages/Calendar";
@@ -16,7 +17,7 @@ class App extends React.Component{
    LoginContainer = () => {
 
     return(
-      <div className="container">
+      <div className="container-fluid">
       {/* <Route exact path="/" render={() => <Redirect to="/Home" />} /> */}
       <Route exact path="/" component={Home} />
     </div>
@@ -26,17 +27,16 @@ class App extends React.Component{
   
   DefaultContainer = () => {
     return(
-      <div>
-      <div className="container-fluid">
-        <Navbar />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/calendar" component={Calendar} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/event" component={Event} />
-        <Route exact path="/todo" component={Todo} />
+      // <div>
+        <div>
+          <Navbar />
+          
+          <Route exact path="/calendar" component={Calendar} />
        
-      </div>
-      </div>
+          <Route exact path="/todo" component={Todo} />
+        
+        </div>
+      // </div>
     )  
   }
 
@@ -48,6 +48,7 @@ class App extends React.Component{
         <Route exact path="/" component={Home}/>      
         <Route exact path = "/(calendar)" component={this.DefaultContainer}/>
         <Route exact path = "/(todo)" component={this.DefaultContainer}/>
+       
     
       </div>
       </Switch>

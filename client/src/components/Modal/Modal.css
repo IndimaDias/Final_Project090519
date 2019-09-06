@@ -1,3 +1,8 @@
+.modal{
+    /* position: absolute;
+    z-index: 1; */
+}
+
 .modal-wrapper {
     background: white;
     border: 1px solid #d0cccc;

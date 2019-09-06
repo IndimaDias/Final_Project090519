@@ -11,18 +11,17 @@ function Navbar() {
       </Link>
       <div>
         <ul className="navbar-nav">
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to="/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/about"
-                  ? "nav-link active"
+                window.location.pathname === "/" ? "nav-link active"
                   : "nav-link"
               }
             >
               About
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link
               to="/calendar"
@@ -41,7 +40,7 @@ function Navbar() {
 
             
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to="/search"
               className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
@@ -50,20 +49,19 @@ function Navbar() {
             </Link>
 
             
-          </li>
+          </li> */}
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
-              to="/"
+              to="/about"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/"
-                  ? "nav-link active"
+                window.location.pathname === "/about"? "nav-link active"
                   : "nav-link"
               }
             >
               Home
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
