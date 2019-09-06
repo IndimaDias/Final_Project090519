@@ -15,9 +15,10 @@ class ButtonTags extends React.Component{
     }
     
     render(){   
-       
+      
         const eventTypeIcon = this.getEventIcon();
-
+       
+        
         return (            
             <button className = " btn eventTag" 
                type = "button"

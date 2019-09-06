@@ -38,5 +38,9 @@ export default {
 
   deleteTodo : function(id){
     return axios.delete("/api/todos/" + id);
+  },
+
+  saveUser : function(userData){
+    return axios.post("api/users", userData);
   }
 };

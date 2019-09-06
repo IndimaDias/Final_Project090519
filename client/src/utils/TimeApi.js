@@ -3,12 +3,14 @@ import remindOptions from "../remindOption";
 
 export default {
     getValue : function(id){
-
+       
         var timeVal = 0;
 
-        const remindOpt = remindOptions.fileter(option => option.id === id);
+        const remindOpt = remindOptions.filter(optionObj => optionObj.id == id);
 
-        timeVal = remindOpt.timeValue;
+
+        timeVal = remindOpt[0].timeValue;
+      
         
         if(id <= 4){
             return timeVal ;

@@ -5,9 +5,11 @@ const path = require ("path");
 const router = require("express").Router();
 const eventRoutes = require("./events");
 const todoRouters = require("./todos");
+const userRouters = require("./users");
 
 router.use("/events", eventRoutes);
 router.use("/todos",todoRouters);
+router.use("/users" , userRouters);
 
 // For anything else, render the html page
 router.use(function(req, res) {
