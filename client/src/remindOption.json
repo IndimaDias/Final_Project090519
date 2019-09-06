@@ -1,19 +1,24 @@
 [{"id": 1,
-  "option" :"At time of event"  
+  "option" :"At time of event",
+  "timeValue" : 0 
  },
  {"id" : 2,
-  "option" :"5 minutes before"},
+  "option" :"5 minutes before",
+  "timeValue" : 5 },
  {"id" : 3,
-  "option" :"15 minutes before"},
+  "option" :"15 minutes before",
+  "timeValue" : 15 },
  {"id" : 4,
-  "option": "30 minutes before"},
+  "option": "30 minutes before",
+  "timeValue" : 30 },
  {"id" : 5,
-  "option" :"1 hour before"},
+  "option" :"1 hour before",
+  "timeValue" : 1 },
  {"id" : 6,
-  "option" : "2 hours before"},
+  "option" : "2 hours before",
+  "timeValue" : 2 },
  {"id" : 7,
-  "option" : "1 day before"},
- {"id" : 8,
-  "option" : "1 week before"}    
+  "option" : "1 day before",
+  "timeValue" : 24 }
 ]
 
