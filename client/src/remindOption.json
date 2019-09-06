@@ -1,0 +1,19 @@
+[{"id": 1,
+  "option" :"At time of event"  
+ },
+ {"id" : 2,
+  "option" :"5 minutes before"},
+ {"id" : 3,
+  "option" :"15 minutes before"},
+ {"id" : 4,
+  "option": "30 minutes before"},
+ {"id" : 5,
+  "option" :"1 hour before"},
+ {"id" : 6,
+  "option" : "2 hours before"},
+ {"id" : 7,
+  "option" : "1 day before"},
+ {"id" : 8,
+  "option" : "1 week before"}    
+]
+

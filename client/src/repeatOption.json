@@ -1,0 +1,6 @@
+[{"id" : 1,
+ "option" : "Never"},
+{"id" : 2,
+  "option" : "Daily"},
+{"id" : 3,
+ "option" : "Weekly"}]

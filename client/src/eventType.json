@@ -1,0 +1,42 @@
+[{"id" : "1",
+   "option" : "General",
+   "icon" : "fa fa-globe"  
+ },
+ {"id" : "2",
+    "option" : "Work",
+    "icon" : "fa fa-briefcase"
+
+  },
+  {"id" : "3",
+    "option" : "Birthday",
+    "icon" : "fa fa-birthday-cake" 
+  },
+  {"id" : "4",
+    "option" : "Invite",
+    "icon" : "fa fa-envelope-open-o"
+  },
+  {"id" : "5",
+    "option" : "Pet",
+    "icon" : "fa fa-paw" 
+  },
+  {"id" : "6",
+    "option" : "Home",
+    "icon" : "fa fa-home" 
+  },
+  {"id" : "7",
+    "option" : "School",
+    "icon" : "fa fa-graduation-cap"  
+  },
+  {"id" : "8",
+    "option" : "Phone",
+    "icon" : "fa fa-phone"  
+  },
+  {"id" : "9",
+    "option" : "Doctor",
+    "icon" : "fa fa-stethoscope"  
+  },
+  {"id" : "10",
+    "option" : "Vacation",
+    "icon" : "fa fa-plane"  
+  }
+]

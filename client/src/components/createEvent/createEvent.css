@@ -1,0 +1,53 @@
+.modal{
+    z-index: 1;
+    /* top : 0; */
+}
+
+.dateInput{
+    width:70%;
+}
+
+.form-group .col-3{
+    margin: 10px;
+    text-align: center;
+}
+
+.form-control{
+    padding-left:10px;
+}
+.col-form-label{
+   padding-top: 20px; 
+   font-weight: bold;
+   text-align: right;
+}
+
+.form-group .col-8{
+    margin-top :20px;
+    /* margin-left: 5px; */
+}
+
+.iconButton{
+    margin-left: 10px;
+    height: 40px;
+    margin-top :20px;
+}
+
+.btnRow .btn{
+    margin: 10px;
+   
+}
+
+.btnRow{
+    margin-top:50px;
+    margin-left: 50px;
+}
+
+.option{
+    margin-top : 10px;
+    padding-left: 10px;
+    margin-left : 10px;
+}
+
+.select{
+    font-family: 'FontAwesome', 'Second Font name'
+}

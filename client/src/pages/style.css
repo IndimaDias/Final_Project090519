@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+body, html {
+    height: 100%;
+  }
+
+  .bg {
+    background-image: url("https://cdn.pixabay.com/photo/2018/06/20/07/33/planner-3485976_960_720.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size : cover;
+    
+  }
+
+.label{
+  font-family: 'Courgette', cursive;
+  font-size: 80px;
+  padding:30px;
+}  
+  
+.colLabel{
+  display : flex;
+  position: absolute; 
+  margin-top: 15px;
+  margin-left: 20%;
+}
+
+.colTodo{
+  background-color: white;
+  margin-top: 12%;
+  margin-right: 40px;
+  position: absolute;
+  padding: 20px;
+  opacity: 0.8; 
+  border: 0.5px outset white;
+  border-radius: 5px;
+}
