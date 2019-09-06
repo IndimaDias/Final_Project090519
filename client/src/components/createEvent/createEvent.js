@@ -80,7 +80,6 @@ class Event extends React.Component{
        
         const name = ev.target.name;
         
-
         
         this.setState({event : {...this.state.event, [name] : value}});
 
