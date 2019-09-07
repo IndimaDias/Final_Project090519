@@ -48,6 +48,7 @@ class App extends React.Component{
       <Switch>
       <div className="App">
         <Route exact path="/" component={Home}/>      
+        <Route exact path="/about" component={About}/>
         <Route exact path = "/(calendar)" component={this.DefaultContainer}/>
         <Route exact path = "/(todo)" component={this.DefaultContainer}/>
         <Route exact path="/formpage" component={Formpage} />
