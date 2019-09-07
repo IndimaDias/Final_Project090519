@@ -1,5 +1,6 @@
 body {
-    background-image: url("https://cdn.pixabay.com/photo/2016/03/10/09/24/typewriter-1248088_1280.jpg");
+    height: 100vh;
+    
   
    }
 /* .formChange{
@@ -9,10 +10,16 @@ body {
     margin: auto !important;
     padding: 0 !important;
 
-} */
-/* #MDBCardBody{
+}
+#MDBCardBody{
     width: 50% !important;
     padding: 10px !important;
     color: lawngreen !important;
 
-} */
+.formContainer{
+    height: 100vh;
+    min-height: 100%;
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/10/09/24/typewriter-1248088_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

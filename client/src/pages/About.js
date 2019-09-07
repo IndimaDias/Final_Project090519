@@ -1,58 +1,24 @@
-// import React from "react";
-// import Container from "../components/Container";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import Jumbotron from "react-bootstrap/Jumbotron";
-
-
-// import "./style.css";
-
-// const home = () => {
-//   return <div className="bg" />;
-// };
-// export default home;
-
-
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import {
-  MDBMask,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-  MDBBtn,
-  MDBView,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBAnimation
-} from "mdbreact";
-import "./css/index.css";
+import {Link} from "react-router-dom";
+
+import "./css/about.css";
 
 class About extends React.Component {
-  state = {
-    collapseID: ""
-  };
-
-  toggleCollapse = collapseID => () =>
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
 
   render() {
-    const overlay = (
-      <div
-        id="sidenav-overlay"
-        style={{ backgroundColor: "transparent" }}
-        onClick={this.toggleCollapse("navbarCollapse")}
-      />
-    );
+
     return (
-      <div id="classicformpage">
-        <Router>
-          <div>
-            {this.state.collapseID && overlay}
+        <div className = "container-fluid test">
+          <div className ="Row rowHeading">
+              <div className = "Col center"> 
+                <h1 className ="text-light text-center"> Welcome to </h1>
+                <h1 className = "text-light text-center">DAD'S ORGANIZER</h1>
+                <Link to="/">
+                    <button className= "btn btn-light btn-lg" style={{marginLeft:"45%"}}>Click to Login</button>
+               </Link>
+            </div>
           </div>
+
         </Router>
 
         <MDBView>
@@ -75,39 +41,9 @@ class About extends React.Component {
                   </h6>
                 </MDBAnimation>
 
-                <MDBCol md="6" xl="5" className="mb-4">
-                  <MDBAnimation type="fadeInRight" delay=".3s">
-                    <MDBCard id="classic-card">
-                      <MDBCardBody className="white-text">
-                        <h3 className="text-center">
-                          <MDBIcon icon="user" /> Log In
-                        </h3>
-                        <hr className="hr-light" />
-                        <MDBInput
-                          className="text-default"
-                          iconClass="text-default"
-                          label="Your email"
-                          icon="envelope"
-                        />
-                        <MDBInput
-                          className="white-text"
-                          iconClass="white-text"
-                          label="Your password"
-                          icon="lock"
-                          type="password"
-                        />
-                        <div className="text-center mt-4">
-                        <MDBBtn rounded color="info">Login</MDBBtn>
-            </div>
-                      </MDBCardBody>
-                    </MDBCard>
-                  </MDBAnimation>
-                </MDBCol>
-              </MDBRow>
-            </MDBContainer>
-          </MDBMask>
-        </MDBView>
-      </div>
+
+        </div>
+      
     );
   }
 }
