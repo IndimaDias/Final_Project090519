@@ -11,39 +11,97 @@ import "./css/form.css";
 import { Button } from "reactstrap";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
-const Formpage = () => {
+import API from "../utils/API";
+import About from "./About";
+
+
+class Formpage extends React.Component {
+
+  state = {
+    firstName : "",
+    lastName : "",
+    password : "",
+    email : "",
+    accountType : "",
+    parentId : 0,
+    phoneNo : ""
+  }
+
+  handleInputChange = (ev) => {
+    const value = ev.target.value;
+       
+    const name = ev.target.name;
+
+    this.setState({[name] : value});
+  }
+
+  onButtonClick = () =>{
+    const userData = {
+      firstName : this.state.firstName,
+      lastName : this.state.lastName,
+      password : this.state.password,
+      email : this.state.email,
+      accountType : this.state.accountType,
+      parentId : this.state.parentId,
+      phoneNo : this.state.phoneNo,
+      
+    }
+
+    console.log(userData)
+
+    API.saveUser(userData)
+     .then((success) => {
+       console.log("scuccess");
+       window.open("/about", "_self")
+     }) 
+     .catch((err) =>{
+       console.log("Failed");
+     })
+  }
+
+  render (){
   return (
-    <MDBContainer>
-      <MDBRow>
-        <MDBCol sm="6" height="300px">
+
+    <MDBContainer fluid className = "h-100 formContainer">
+      <MDBRow end>
+        <MDBCol sm="4">
           <MDBCard>
-            <MDBCardBody >
-            <div class = "formChange">
+            <MDBCardBody>
+            <div className = "formChange">
               <form>
-                <p className="h4 text-center py-4">Sign up</p>
+                <p className="text-center py-2" style = {{fontSize :"20px"}}>Sign up</p>
                 <div className="grey-text">
-                  <MDBInput
-                    label="First name"
-                    icon="user"
-                    group
-                    type="text"
-                    validate
-                    error="wrong"
-                    success="right"
-                  />
+                  <MDBRow ml-2>
+                    <MDBInput className = "mr-1" size="sm"
+                      label="First name"          
+                      icon="user"
+                      group
+                      type="text"
+                      validate
+                      error="wrong"
+                      success="right"
+                      name = "firstName"
+                      value = {this.state.firstName}
+                      onChange ={this.handleInputChange}
+                    />
 
-                  <MDBInput
-                    label="Last name"
-                    icon="user"
-                    group
-                    type="text"
-                    validate
-                    error="wrong"
-                    success="right"
-                  />
+                    <MDBInput size = "sm"
+                      label="Last name"
+                      icon="1"
+                      group
+                      type="text"
+                      validate
+                      error="wrong"
+                      success="right"
+                      name = "lastName"
+                      value = {this.state.lastName}
+                      onChange = {this.handleInputChange}
+                    />
+                  </MDBRow>
 
-                  <MDBInput
+                  <MDBInput size = "sm"
                     label="Phone Number"
                     icon="phone"
                     group
@@ -51,28 +109,31 @@ const Formpage = () => {
                     validate
                     error="wrong"
                     success="right"
+                    name = "phoneNo"
+                    value = {this.state.phoneNo}
+                    onChange = {this.handleInputChange}
                   />
 
                   <fieldset>
-                    <Form.Group as={Col}>
-                      <Col sm={10}>
-                        <Form.Check
+                    <Form.Group as={Row}>
+                      {/* <Col sm={10}> */}
+                        <Form.Check                          
                           type="radio"
                           label="Parent"
                           name="formHorizontalRadios"
                           id="formHorizontalRadios1"
                         />
-                        <Form.Check
+                        <Form.Check                          
                           type="radio"
                           label="Child"
                           name="formHorizontalRadios"
                           id="formHorizontalRadios2"
                         />
-                      </Col>
+                      {/* </Col> */}
                     </Form.Group>
                   </fieldset>
                   
-                  <MDBInput
+                  <MDBInput size = "sm"
                     label="Your email"
                     icon="envelope"
                     group
@@ -80,26 +141,35 @@ const Formpage = () => {
                     validate
                     error="wrong"
                     success="right"
+                    name = "email"
+                    value = {this.state.email}
+                    onChange = {this.handleInputChange}
                   />
-                  <MDBInput
-                    label="Confirm your email"
-                    icon="exclamation-triangle"
-                    group
-                    type="text"
-                    validate
-                    error="wrong"
-                    success="right"
-                  />
-                  <MDBInput
+                  <MDBInput size = "sm"
                     label="Your password"
                     icon="lock"
                     group
                     type="password"
                     validate
+                    name = "password"
+                    value = {this.state.password}
+                    onChange = {this.handleInputChange}
                   />
+                  <MDBInput size = "sm"
+                    label="Confirm your password"
+                    icon="exclamation-triangle"
+                    group
+                    type="password"
+                    validate
+                    error="wrong"
+                    success="right"
+                    onChange = {this.handleInputChange}
+                  />
+                  
                 </div>
                 <div className="text-center py-4 mt-3">
-                  <Button color="info">Register</Button>{" "}
+                  <Button color="info"
+                  onClick = {this.onButtonClick}>Register</Button>{" "}
                 </div>
               </form>
 
@@ -110,6 +180,7 @@ const Formpage = () => {
       </MDBRow>
     </MDBContainer>
   );
-};
+}
+}
 
 export default Formpage;

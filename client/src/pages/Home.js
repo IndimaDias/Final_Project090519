@@ -1,10 +1,9 @@
 import React from "react";
-import Hero from "../components/Hero";
-import Container from "../components/Container";
+import {Link} from 'react-router-dom'
 import Row from "../components/Row";
 import Col from "../components/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Jumbotron from 'react-bootstrap/Jumbotron';
+
 import "./css/home.css";
 
 
@@ -36,13 +35,18 @@ class Home extends React.Component{
       
       <div className="login-reg-panel">
           <div className="login-info-box">
-           <h1>DADDY'S DAY</h1>
+           <h1>DAD'S ORGANIZER</h1>
           </div>
 
           <div className="register-info-box">
             <h2>Don't have an account?</h2>
-            <p>Daady , Moddy, kids ?? all can register</p>
-            <a href="/Formpage"><label id="label-login" for="log-login-show">Register</label></a>
+          
+            <p>Daddy , Mommy, kids ?? all can register</p>
+            {/* <label id="label-login" for="log-login-show">Register</label> */}
+            <Link to="/formpage">
+              <button className= "btn btn-outline-secondary" style={{padding:"5px 20px"}}>Register </button>
+            </Link>
+            
             
           </div>
 
