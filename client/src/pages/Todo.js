@@ -1,7 +1,7 @@
 import React from "react";
 import TodoBox from "../components/Todo/TodoBox";
 
-import "./style.css"
+import "./TodoStyle.css"
 
 class Todo extends React.Component{
 

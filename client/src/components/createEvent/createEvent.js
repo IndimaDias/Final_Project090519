@@ -120,8 +120,8 @@ class Event extends React.Component{
         console.log(newEvent);
         let eventData = {
             eventName : newEvent.eventTitle,
-            startDate : Date.parse(`${newEvent.startDate} ${newEvent.startTime}`),
-            endDate : Date.parse(`${newEvent.endDate} ${newEvent.endTime}`),
+            startDate : Date.parse(`${newEvent.startDate} ${newEvent.startTime}Z`),
+            endDate : Date.parse(`${newEvent.endDate} ${newEvent.endTime}Z`),
             repeatOpt_id : newEvent.repeat,
             location : newEvent.location,
             remindOpt_id : newEvent.remind,
@@ -132,7 +132,7 @@ class Event extends React.Component{
             
         };
 
-      
+      console.log(eventData);
         
         API.saveEvent(
             eventData
