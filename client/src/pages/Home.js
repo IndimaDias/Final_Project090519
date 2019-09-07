@@ -42,7 +42,7 @@ class Home extends React.Component{
           <div className="register-info-box">
             <h2>Don't have an account?</h2>
             <p>Daady , Moddy, kids ?? all can register</p>
-            <label id="label-login" for="log-login-show">Register</label>
+            <a href="/Formpage"><label id="label-login" for="log-login-show">Register</label></a>
             
           </div>
 
