@@ -11,3 +11,15 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.row1{
+    margin-left: 5px;
+}
+
+.lastName{
+    margin-left: 5px;
+}
+
+.rowRadio{
+    margin-left: 25%;
+}

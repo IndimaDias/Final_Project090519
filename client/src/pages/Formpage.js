@@ -7,6 +7,7 @@ import {
   MDBCard,
   MDBCardBody
 } from "mdbreact";
+
 import "./css/form.css";
 import { Button } from "reactstrap";
 import Form from "react-bootstrap/Form";
@@ -66,15 +67,15 @@ class Formpage extends React.Component {
 
     <MDBContainer fluid className = "h-100 formContainer">
       <MDBRow end>
-        <MDBCol sm="4">
+        <MDBCol sm="5">
           <MDBCard>
             <MDBCardBody>
             <div className = "formChange">
               <form>
                 <p className="text-center py-2" style = {{fontSize :"20px"}}>Sign up</p>
                 <div className="grey-text">
-                  <MDBRow ml-2>
-                    <MDBInput className = "mr-1" size="sm"
+                  <MDBRow className = "row1">
+                    <MDBInput size="sm"
                       label="First name"          
                       icon="user"
                       group
@@ -87,7 +88,7 @@ class Formpage extends React.Component {
                       onChange ={this.handleInputChange}
                     />
 
-                    <MDBInput size = "sm"
+                    <MDBInput className = "lastName" size = "sm"
                       label="Last name"
                       icon="1"
                       group
@@ -115,9 +116,9 @@ class Formpage extends React.Component {
                   />
 
                   <fieldset>
-                    <Form.Group as={Row}>
+                    <Form.Group as={Row} className="rowRadio">
                       {/* <Col sm={10}> */}
-                        <Form.Check                          
+                        <Form.Check                        
                           type="radio"
                           label="Parent"
                           name="formHorizontalRadios"
