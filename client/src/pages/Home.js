@@ -36,12 +36,12 @@ class Home extends React.Component{
       
       <div className="login-reg-panel">
           <div className="login-info-box">
-           <h1>DADDY'S DAY</h1>
+           <h1>BetterDad</h1>
           </div>
 
           <div className="register-info-box">
             <h2>Don't have an account?</h2>
-            <p>Daady , Moddy, kids ?? all can register</p>
+            <p>Mom, Dad, and the kids can all create an account to join in! </p>
             <label id="label-login" for="log-login-show">Register</label>
             
           </div>
