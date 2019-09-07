@@ -7,7 +7,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        Events Planner
+
+      <img src={ require('./logo6.png')} width= "300" height = "100"/>
+      {/* <img src={require('./logo4.png') {width="100" height="50"}} /> */}
       </Link>
       <div>
         <ul className="navbar-nav">

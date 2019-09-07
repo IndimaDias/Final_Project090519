@@ -3,6 +3,18 @@ body {
     
   
    }
+/* .formChange{
+    width: 80% !important;
+    max-height: 500px !important;
+    background-color: red !important;
+    margin: auto !important;
+    padding: 0 !important;
+
+}
+#MDBCardBody{
+    width: 50% !important;
+    padding: 10px !important;
+    color: lawngreen !important;
 
 .formContainer{
     height: 100vh;
