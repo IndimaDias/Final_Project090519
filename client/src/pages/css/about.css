@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+
+
 .test{
     background-image: url(https://cdn.pixabay.com/photo/2015/01/20/12/51/imac-605421_960_720.jpg) !important; 
 
@@ -5,5 +8,15 @@
 
 .rowHeading{
     width: 100%;
-    margin-top : 20%;
+    margin-top : 10%;
+}
+
+.heading1{
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+}
+
+.heading2{
+    font-family: 'Russo One', sans-serif;
+    font-size: 100px; 
 }

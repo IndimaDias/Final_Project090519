@@ -1,25 +1,38 @@
 body {
     height: 100vh;
-    
-  
+     
    }
-/* .formChange{
-    width: 80% !important;
-    max-height: 500px !important;
-    background-color: red !important;
-    margin: auto !important;
-    padding: 0 !important;
 
-}
-#MDBCardBody{
-    width: 50% !important;
-    padding: 10px !important;
-    color: lawngreen !important;
+ .formContainer{
+     background-image: url(https://cdn.pixabay.com/photo/2017/05/08/15/28/agenda-2295709_960_720.jpg) !important;
 
-.formContainer{
-    height: 100vh;
-    min-height: 100%;
-    background-image: url("https://cdn.pixabay.com/photo/2016/03/10/09/24/typewriter-1248088_1280.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+ }  
+.row1{
+    /* margin-left: 5px; */
+    margin: 20px 5px;
 }
+
+.lastName{
+    margin-left: 30px;
+}
+
+.rowRadio{
+    margin-left: 25%;
+}
+
+.icon1{
+    padding: 10px;
+    text-align: center;
+}
+
+.lastName label{ 
+    margin-left : 0px;
+}
+
+.formRow{
+    position: absolute;
+    top : 10%;
+}
+/* .rowRadio{
+    margin
+} */

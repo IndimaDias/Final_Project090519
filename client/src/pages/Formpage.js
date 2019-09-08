@@ -5,8 +5,10 @@ import {
   MDBCol,
   MDBInput,
   MDBCard,
-  MDBCardBody
+  MDBCardBody,
+  MDBFormInline
 } from "mdbreact";
+
 import "./css/form.css";
 import { Button } from "reactstrap";
 import Form from "react-bootstrap/Form";
@@ -26,7 +28,9 @@ class Formpage extends React.Component {
     email : "",
     accountType : "",
     parentId : 0,
-    phoneNo : ""
+    phoneNo : "",
+    password2:"", 
+    radio : ""
   }
 
   handleInputChange = (ev) => {
@@ -35,6 +39,12 @@ class Formpage extends React.Component {
     const name = ev.target.name;
 
     this.setState({[name] : value});
+  }
+
+  onRadioClick = (nr) =>{
+    this.setState({
+      radio: nr
+    });
   }
 
   onButtonClick = () =>{
@@ -54,7 +64,7 @@ class Formpage extends React.Component {
     API.saveUser(userData)
      .then((success) => {
        console.log("scuccess");
-       window.open("/about", "_self")
+      //  window.open("/about", "_self")
      }) 
      .catch((err) =>{
        console.log("Failed");
@@ -64,115 +74,122 @@ class Formpage extends React.Component {
   render (){
   return (
 
+    
     <MDBContainer fluid className = "h-100 formContainer">
-      <MDBRow end>
-        <MDBCol sm="4">
+      <MDBRow  className = "formRow">
+        <MDBCol md="5" className = "offset-6">
           <MDBCard>
             <MDBCardBody>
             <div className = "formChange">
-              <form>
+             
                 <p className="text-center py-2" style = {{fontSize :"20px"}}>Sign up</p>
                 <div className="grey-text">
-                  <MDBRow ml-2>
-                    <MDBInput className = "mr-1" size="sm"
-                      label="First name"          
-                      icon="user"
-                      group
-                      type="text"
-                      validate
-                      error="wrong"
-                      success="right"
-                      name = "firstName"
-                      value = {this.state.firstName}
-                      onChange ={this.handleInputChange}
-                    />
+                  <form className="needs-validation">
+                    <MDBRow className = "row1"> 
+                         <i className="fa fa-user icon1" ></i>                 
+                        <input className = "form-control form-control-sm col-5"                              
+                              type="text" 
+                              placeholder="First name"
+                              name = "firstName"
+                              required
+                              error="wrong"
+                              success="right"
+                              value = {this.state.firstName}
+                              onChange ={this.handleInputChange}/>
 
-                    <MDBInput size = "sm"
-                      label="Last name"
-                      icon="1"
-                      group
-                      type="text"
-                      validate
-                      error="wrong"
-                      success="right"
-                      name = "lastName"
-                      value = {this.state.lastName}
-                      onChange = {this.handleInputChange}
-                    />
+                        <input className = "form-control form-control-sm col-5 lastName" 
+                              type="text"
+                              name = "lastName" 
+                              placeholder="Last name"
+                              required
+                              error="wrong"
+                              success="right"
+                              value = {this.state.password}                      
+                              onChange = {this.handleInputChange}
+                              />                       
+                               
                   </MDBRow>
+                  <MDBRow className="row1">
+                    <i className="fa fa-phone icon1" ></i>                   
+                    <input className = "form-control form-control-sm col-5" 
+                                type="text"
+                                name = "phoneNo" 
+                                placeholder="Phone no"
+                                required
+                                error="wrong"
+                                success="right"
+                                value = {this.state.phoneNo}                      
+                                onChange = {this.handleInputChange}
+                                />                     
+                  </MDBRow>                  
 
-                  <MDBInput size = "sm"
-                    label="Phone Number"
-                    icon="phone"
-                    group
-                    type="number"
-                    validate
-                    error="wrong"
-                    success="right"
-                    name = "phoneNo"
-                    value = {this.state.phoneNo}
-                    onChange = {this.handleInputChange}
-                  />
+                  <MDBRow className = "rowRadio">
+                    <MDBCol>
+                      <MDBFormInline>
+                        <MDBInput gap 
+                                  onClick={() => this.onRadioClick(1)} 
+                                  checked={this.state.radio ===1 ? true : false} 
+                                  label="Parent" type="radio" id="radio1" />
+                        <MDBInput gap 
+                                  onClick={() => this.onRadioClick(2)} 
+                                  checked={this.state.radio===2 ? true : false} 
+                                  label="Child" type="radio" id="radio2" />
+        
+                      </MDBFormInline>
+                    </MDBCol>
+                  </MDBRow>
+                 
+                  <MDBRow className="row1">
+                    <i className="fa fa-envelope icon1" ></i>                   
+                    <input className = "form-control form-control-sm col-10" 
+                                type="text"
+                                name = "email" 
+                                placeholder="Email"
+                                required
+                                error="wrong"
+                                success="right"
+                                value = {this.state.email}                      
+                                onChange = {this.handleInputChange}
+                                />                     
+                  </MDBRow>  
 
-                  <fieldset>
-                    <Form.Group as={Row}>
-                      {/* <Col sm={10}> */}
-                        <Form.Check                          
-                          type="radio"
-                          label="Parent"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios1"
-                        />
-                        <Form.Check                          
-                          type="radio"
-                          label="Child"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios2"
-                        />
-                      {/* </Col> */}
-                    </Form.Group>
-                  </fieldset>
+                  <MDBRow className="row1">
+                    <i className="fa fa-lock icon1" ></i>                   
+                    <input className = "form-control form-control-sm col-5" 
+                                type="password"
+                                name = "password" 
+                                placeholder="Password"
+                                required
+                                error="wrong"
+                                success="right"
+                                value = {this.state.password}                      
+                                onChange = {this.handleInputChange}
+                                />                     
+                  </MDBRow>  
+
+                  <MDBRow className="row1">
+                    <i className="fa fa-exclamation-triangle icon1" ></i>                   
+                    <input className = "form-control form-control-sm col-5" 
+                                type="password2"
+                                name = "" 
+                                placeholder="Confirm your password"
+                                required
+                                error="wrong"
+                                success="right"
+                                value = {this.state.password2}                      
+                                onChange = {this.handleInputChange}
+                                />                     
+                  </MDBRow>  
+        
                   
-                  <MDBInput size = "sm"
-                    label="Your email"
-                    icon="envelope"
-                    group
-                    type="email"
-                    validate
-                    error="wrong"
-                    success="right"
-                    name = "email"
-                    value = {this.state.email}
-                    onChange = {this.handleInputChange}
-                  />
-                  <MDBInput size = "sm"
-                    label="Your password"
-                    icon="lock"
-                    group
-                    type="password"
-                    validate
-                    name = "password"
-                    value = {this.state.password}
-                    onChange = {this.handleInputChange}
-                  />
-                  <MDBInput size = "sm"
-                    label="Confirm your password"
-                    icon="exclamation-triangle"
-                    group
-                    type="password"
-                    validate
-                    error="wrong"
-                    success="right"
-                    onChange = {this.handleInputChange}
-                  />
-                  
-                </div>
+                
                 <div className="text-center py-4 mt-3">
                   <Button color="info"
+                  type = "submit"
                   onClick = {this.onButtonClick}>Register</Button>{" "}
                 </div>
               </form>
-
+              </div>
               </div>
             </MDBCardBody>
           </MDBCard>

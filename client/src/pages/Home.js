@@ -41,9 +41,11 @@ class Home extends React.Component{
           </div>
 
           <div className="register-info-box">
-            <h2>Don't have an account?</h2>
+            {/* <h2>Don't have an account?</h2> */}
 
-            <p>Mom, Dad, and the kids can all create an account to join in! </p>
+            <p style= {{textAlign : "left"}}><span style={{fontSize:"30px"}}>BetterDad</span> is an app designed to help busy families schedule events,activities,playdates and more. 
+                  All while allowing you to assign the tasks
+                    to members in the family as well as set up reminders for the event.  </p>
 
           
             <Link to="/formpage">
