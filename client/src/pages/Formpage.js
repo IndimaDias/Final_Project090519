@@ -64,7 +64,7 @@ class Formpage extends React.Component {
     API.saveUser(userData)
      .then((success) => {
        console.log("scuccess");
-       window.open("/about", "_self")
+      //  window.open("/about", "_self")
      }) 
      .catch((err) =>{
        console.log("Failed");
@@ -84,11 +84,10 @@ class Formpage extends React.Component {
              
                 <p className="text-center py-2" style = {{fontSize :"20px"}}>Sign up</p>
                 <div className="grey-text">
-                  <form >
+                  <form className="needs-validation">
                     <MDBRow className = "row1"> 
                          <i className="fa fa-user icon1" ></i>                 
-                        <input className = "form-control form-control-sm col-5"
-                              validate                               
+                        <input className = "form-control form-control-sm col-5"                              
                               type="text" 
                               placeholder="First name"
                               name = "firstName"
@@ -186,6 +185,7 @@ class Formpage extends React.Component {
                 
                 <div className="text-center py-4 mt-3">
                   <Button color="info"
+                  type = "submit"
                   onClick = {this.onButtonClick}>Register</Button>{" "}
                 </div>
               </form>
