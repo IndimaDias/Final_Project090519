@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
 
-      <img src={ require('./logo6.png')} width= "300" height = "100"/>
+      <img src={ require('./logo-01.png')} width= "150" height = "45"/>
       {/* <img src={require('./logo4.png') {width="100" height="50"}} /> */}
       </Link>
       <div>
