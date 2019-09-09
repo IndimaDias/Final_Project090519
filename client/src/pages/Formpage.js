@@ -64,7 +64,7 @@ class Formpage extends React.Component {
     API.saveUser(userData)
      .then((success) => {
        console.log("scuccess");
-      //  window.open("/about", "_self")
+       window.open("/about", "_self")
      }) 
      .catch((err) =>{
        console.log("Failed");
