@@ -1,4 +1,4 @@
-var cfg = require('../config');
+var cfg = require('../config_text');
 var Twilio = require('twilio');
 var moment = require('moment');
       

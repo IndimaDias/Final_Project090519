@@ -1,5 +1,5 @@
 const express = require("express");
-
+const scheduler = require('./scheduler');
 const routes = require("./routes/routes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,6 +16,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+scheduler.start();
 //Add routes, both API and view
 app.use(routes);
 
