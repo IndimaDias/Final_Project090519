@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3001;
 
 // Requiring our models for syncing
 const db = require("./models");
-
+``
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
@@ -21,7 +21,7 @@ scheduler.start();
 //Add routes, both API and view
 app.use(routes);
 
-db.sequelize.sync({force:false}).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT,() => 
     console.log(`🌎 ===> API Server now listening on PORT ${PORT}!`)
   )

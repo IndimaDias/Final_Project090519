@@ -48,7 +48,10 @@ class Formpage extends React.Component {
     });
   }
 
-  onButtonClick = () =>{
+  onButtonClick = (ev) =>{
+    ev.preventDefault();
+    console.log("test");
+
     const userData = {
       firstName : this.state.firstName,
       lastName : this.state.lastName,
@@ -171,8 +174,8 @@ class Formpage extends React.Component {
                   <MDBRow className="row1">
                     <i className="fa fa-exclamation-triangle icon1" ></i>                   
                     <input className = "form-control form-control-sm col-5" 
-                                type="password2"
-                                name = "" 
+                                type="password"
+                                name = "password2" 
                                 placeholder="Confirm your password"
                                 required
                                 error="wrong"
@@ -187,7 +190,15 @@ class Formpage extends React.Component {
                 <div className="text-center py-4 mt-3">
                   <Button color="info"
                   type = "submit"
-                  onClick = {this.onButtonClick}>Register</Button>{" "}
+                  onClick = {this.onButtonClick}>Register</Button>
+                   {/* <button 
+                              type="submit" 
+                              className="btn btn-primary"
+                              name = "submit"
+                              onClick = {this.onButtonClick}
+                            >
+                              Save
+                            </button> */}
                 </div>
               </form>
               </div>
