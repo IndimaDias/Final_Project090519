@@ -1,5 +1,4 @@
 const express = require("express");
-
 const scheduler = require('./scheduler');
 const routes = require("./routes/routes.js");
 const app = express();
