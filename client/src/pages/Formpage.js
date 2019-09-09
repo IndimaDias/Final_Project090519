@@ -34,6 +34,7 @@ class Formpage extends React.Component {
   }
 
   handleInputChange = (ev) => {
+    console.log(ev);
     const value = ev.target.value;
        
     const name = ev.target.name;
@@ -104,7 +105,7 @@ class Formpage extends React.Component {
                               required
                               error="wrong"
                               success="right"
-                              value = {this.state.password}                      
+                              value = {this.state.lastName}                      
                               onChange = {this.handleInputChange}
                               />                       
                                

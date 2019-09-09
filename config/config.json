@@ -1,17 +1,9 @@
 {
   "development": {
-<<<<<<< HEAD
-   
-    "username": "fp3wf4tjqjw6w8oc",
-    "password": "qjdjkzykacripxk3",
-    "database": "lav17yg0xn5ajpf8",
-    "host": "izm96dhhnwr2ieg0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-=======
     "username": "root",
     "password": "password",
     "database": "planner",
     "host": "127.0.0.1",
->>>>>>> af65e8ef79f7d75c914bb37dafaf54211bc6d40f
     "dialect": "mysql",
     "operatorsAliases": false
   },
