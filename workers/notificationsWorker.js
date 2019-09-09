@@ -43,7 +43,7 @@ function sendNotifications(callback) {
         events.forEach(function(event) {
             // Create options to send the message
             const options = {
-                to:' +17732998783' ,
+                to:' +18572852708' ,
                 from: cfg.twilioPhoneNumber,
                 /* eslint-disable max-len */
                 body: 'Hi ${event.eventName}. Just a reminder that you have an appointment coming up.',
