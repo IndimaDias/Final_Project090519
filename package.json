@@ -20,12 +20,14 @@
   },
   "dependencies": {
     "axios": "^0.18.1",
-    "express": "^4.16.3",
+    "cron": "^1.7.2",
+    "express": "^4.17.1",
     "gh-pages": "^2.1.1",
     "if-env": "^1.0.4",
     "mdbreact": "^4.19.1",
     "mysql2": "^1.7.0",
     "reactstrap": "^8.0.1",
-    "sequelize": "^5.17.1"
+    "sequelize": "^5.17.1",
+    "twilio": "^3.34.0"
   }
 }
