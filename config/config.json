@@ -3,7 +3,7 @@
     "username": "root",
     "password": "unhdb1",
     "database": "planner",
-    "host": "izm96dhhnwr2ieg0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },
