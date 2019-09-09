@@ -1,17 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBInput,
-  MDBCard,
-  MDBCardBody,
-  MDBView,
-  MDBMask,
-  MDBAnimation
-} from "mdbreact";
+// import {
+//   MDBContainer,
+//   MDBRow,
+//   MDBCol,
+//   MDBInput,
+//   MDBCard,
+//   MDBCardBody,
+//   MDBView,
+//   MDBMask,
+//   MDBAnimation
+// } from "mdbreact";
 
 
 import "./css/about.css";
