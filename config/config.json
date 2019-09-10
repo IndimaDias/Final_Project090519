@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "gura4529",
-    "database": "planner",
-    "host": "127.0.0.1",
+    "username": "k6plf4cm1xi3ue5r",
+    "password": "yl7672f8ttud9up9",
+    "database": "xqxf3vlmbewf6eho",
+    "host": "jj820qt5lpu6krut.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "operatorsAliases": false
   },
