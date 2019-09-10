@@ -32,7 +32,7 @@ class Home extends React.Component{
       window.localStorage.setItem("loggedIn",true);
 
       // userId : window.localStorage.getItem('userId') ,
-      window.open("/Calendar", "_self")
+      window.open("/Calendar", "_self");
 
     })
     .catch((err)=>{
