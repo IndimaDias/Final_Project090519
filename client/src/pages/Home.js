@@ -29,9 +29,11 @@ class Home extends React.Component{
         return;
       }
       window.localStorage.setItem('userId', res.data.id);
+      window.localStorage.setItem("loggedIn",true);
+
+      // userId : window.localStorage.getItem('userId') ,
       window.open("/Calendar", "_self")
-       console.log(res.data); 
-       console.log("valid user");
+
     })
     .catch((err)=>{
       this.setState({errorMessage : "Something went wrong"});
@@ -46,7 +48,13 @@ class Home extends React.Component{
     this.setState({[name] : value});
   }
 
-
+ componentWillUnmount = () =>{
+  const loggedIn = window.localStorage.getItem("loggedIn") ;
+  if(!loggedIn){
+    window.localStorage.setItem('userId', "");
+  }
+  
+ }
   render(){
   return (
 

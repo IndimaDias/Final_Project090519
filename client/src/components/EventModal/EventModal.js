@@ -39,7 +39,7 @@ class EventModal extends React.Component{
     }
 
     render (){
-      
+        console.log(this.props.event);
         const event = this.props.event;
         const dateTag =  this.changeDate();
 

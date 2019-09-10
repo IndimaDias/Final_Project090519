@@ -269,11 +269,14 @@ getUserEvents = (userId) => {
       <div>
         { this.state.show ? this.renderModal():""}
 
-        <div className="container calendar"
-        style={{height:"100vh"}}> 
-          {this.renderHeader()}
-          {this.renderDays()}
-          {this.renderCells()}
+        <div className="container-fluid">
+          <div className="calendar col-10">
+              {/* style={{height:"100vh"}}>  */}
+              {this.renderHeader()}
+              {this.renderDays()}
+              {this.renderCells()}
+          </div> 
+
       </div>
         
       </div>

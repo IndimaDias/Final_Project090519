@@ -58,8 +58,8 @@ class TodoBox extends React.Component{
 
 
     componentDidMount (){
-
-	  this.getTodos(1);
+	  const userId = window.localStorage.getItem("userId");	
+	  this.getTodos(userId);
   }
   
 
@@ -79,8 +79,8 @@ class TodoBox extends React.Component{
 
 
 	handleSubmit = (task) => {
-		
-		this.getTodos(1);
+		const userId = window.localStorage.getItem("userId");
+		this.getTodos(userId);
   }
   
 

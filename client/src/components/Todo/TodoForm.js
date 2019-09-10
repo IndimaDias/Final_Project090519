@@ -12,13 +12,15 @@ class TodoForm extends React.Component{
 		e.preventDefault();
        
         var task = this.state.task.trim();
+        const userId = window.localStorage.getItem("userId");	
+
 		if (!task) {
 			return;
 		}
-       
+        
         let todoItem = {
             taskName : task,
-            userId : 1,
+            userId : userId,
             status : "I"
         }
 
