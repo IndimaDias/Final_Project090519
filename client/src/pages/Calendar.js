@@ -22,7 +22,8 @@ class Calendar extends React.Component {
         show : false,
         modalType : "",
         eventId : "",
-        clickedEvent : []
+        clickedEvent : [],
+        userId : window.localStorage.getItem('userId') ,
         
   };
   
@@ -37,7 +38,7 @@ class Calendar extends React.Component {
 
 
   openEventModal = (event) => {
- console.log("test");
+ 
     this.setState({
         show: true
     });
@@ -53,7 +54,8 @@ class Calendar extends React.Component {
   }
 
   componentWillMount = () => {
-    this.getEvents();
+    
+    this.getUserEvents(this.state.userId);
     
   }
 
@@ -98,7 +100,21 @@ class Calendar extends React.Component {
     );
 };
 
-
+getUserEvents = (userId) => {
+    console.log("user" + userId);
+  API.getUserEvents(userId)
+  .then(res =>{
+    
+    this.setState({
+      events: res.data
+    });     
+  })
+  .catch(() =>
+    this.setState({
+      Events: []
+    })
+  );
+};
 
   renderModal(){
   
@@ -194,10 +210,12 @@ class Calendar extends React.Component {
     for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
         
-       
-        const cloneDay = day;
         
+        const cloneDay = day;
+      
         const daysEvents = eventList.filter((eventOne) => (eventOne.startDate).split("T")[0] === format(cloneDay,"yyyy-MM-dd"));
+      
+        
                 
 
         days.push(
@@ -212,16 +230,18 @@ class Calendar extends React.Component {
             new Date()))}
         >
            
-           <div className = "eventDiv">
-                {daysEvents.map(today => (                  
-                   <ButtonTag
-                   id = {today.id}
-                  // evntType = {"C"}                   
-                   event = {today}
-                   onClick = {(ev) =>this.openEventModal(ev)}/>
+              <div className = "eventDiv">
+                  {daysEvents.map(today => (                  
+                    <ButtonTag
+                    id = {today.id}
+                    // evntType = {"C"}                   
+                    event = {today}
+                    onClick = {(ev) =>this.openEventModal(ev)}/>
 
-                ))}
-           </div>
+              ))}
+              </div>
+                    
+     
            
             
             <span className="number">{formattedDate}</span>            

@@ -10,8 +10,12 @@ router.route("/")
       })
       
       .get(function(req,res){
-        
-        db.Events.findAll(req.query)
+        console.log(req.query)
+        db.Events.findAll({
+          where : {
+            userId : req.query.userId
+          }
+        })
         .then(dbEvent => {        
           res.json(dbEvent)})
         .catch(err => res.status(422).json(err));
@@ -43,4 +47,16 @@ router.route("/:id")
         .catch(err => res.status(422).json(err));
       })
 
+// router.route("/:userId")
+// .get(function(req,res){
+        
+//   db.Events.findAll({
+//     where : {
+//       userId : req.params.userId
+//     }
+//   })
+//   .then(dbEvent => {        
+//     res.json(dbEvent)})
+//   .catch(err => res.status(422).json(err));
+// });
 module.exports = router;

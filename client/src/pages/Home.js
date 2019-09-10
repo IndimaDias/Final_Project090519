@@ -5,17 +5,36 @@ import Col from "../components/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./css/home.css";
-
+import API from "../utils/API";
 
 class Home extends React.Component{
 
   state = {
     Email:"",
-    password : ""
+    password : "",
+    errorMessage : ""
   }
  
-  login = () =>{
+  login = (ev) =>{
+    ev.preventDefault();
     console.log(this.state.Email);
+    console.log(this.state.password);
+    const email = this.state.Email;
+    const password = this.state.password;
+
+    API.validateUser(email,password)
+    .then(res =>{
+      if(!res.data){
+        this.setState({errorMessage: "Invalid email or password"});
+      }
+      window.localStorage.setItem('userId', res.data.id);
+      window.open("/Calendar", "_self")
+       console.log(res.data); 
+       console.log("valid user");
+    })
+    .catch((err)=>{
+      this.setState({errorMessage : "Something went wrong"});
+    })
   }
   
   handleInputChange = (ev) => {
@@ -58,28 +77,45 @@ class Home extends React.Component{
           <div className="white-panel">
             <div className="login-show">
               <h2>LOGIN</h2>
-              <form>
+              <form className="needs-validation">
                 <input className = "form-control" 
                        type="text" 
                        placeholder="Email"
                        name = "Email"
                        value = {this.state.Email}
-                       onChange = {this.handleInputChange}/>
+                       onChange = {this.handleInputChange}
+                       required
+                       error="wrong"
+                       success="right"/>
 
                 <input className = "form-control" 
                        type="password"
                        name = "password" 
                        placeholder="Password"
                        value = {this.state.password}                      
-                       onChange = {this.handleInputChange}/>
+                       onChange = {this.handleInputChange}
+                       required/>
+                
+                <div className = "row">
+                    <div className ="col align-self-start">
+                        <a href="">Forgot password?</a>
+                    </div> 
+                    <div className = "col align-self-end">  
+                        <input className = "btn btn-dark btnLogin end"
+                              type="submit" 
+                              value="Login"
+                              onClick = {this.login}
+                        />  
+                    </div>
 
-                <input type="button" 
-                       value="Login"
-                       onClick = {this.login}
-                />
-                {/* <button type="submit" className = "btn btn-dark">Login</button> */}
-                <a href="">Forgot password?</a>
+                  </div>
+              
+                  {/* <button type="submit" className = "btn btn-dark">Login</button> */}
+                 
+
+
               </form>
+              <div> {this.state.errorMessage}</div>
             </div>
 
           </div>

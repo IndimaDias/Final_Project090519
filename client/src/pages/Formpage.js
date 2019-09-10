@@ -191,14 +191,7 @@ class Formpage extends React.Component {
                   <Button color="info"
                   type = "submit"
                   onClick = {this.onButtonClick}>Register</Button>
-                   {/* <button 
-                              type="submit" 
-                              className="btn btn-primary"
-                              name = "submit"
-                              onClick = {this.onButtonClick}
-                            >
-                              Save
-                            </button> */}
+                  
                 </div>
               </form>
               </div>

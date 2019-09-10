@@ -1,7 +1,7 @@
 import React from "react";
 import {format, addHours, addDays,parseISO,isValid} from "date-fns";
 
-import Header from "../header/header.js";
+
 import "./createEvent.css";
 
 
@@ -33,7 +33,7 @@ class Event extends React.Component{
             repeatOption,
             remindOption,
             eventType ,
-            userId : 1 ,
+            userId : window.localStorage.getItem('userId') ,
             errorMessaage : ""         
         }
         

@@ -11,12 +11,18 @@ export default {
   },
 
   getEvents : function(id){
+    console.log(id);
     if (id) {    
       return axios.get("/api/events/" + id);
     }
     else {    
       return  axios.get("/api/events" );
     }    
+  },
+
+  getUserEvents : function(userId){
+    console.log(userId);
+    return axios.get("/api/events?userId=" + userId );
   },
 
   deleteEvent : function (id) {
@@ -41,6 +47,17 @@ export default {
   },
 
   saveUser : function(userData){
-    return axios.post("api/users", userData);
+    return axios.post("api/users/", userData);
+  },
+
+  validateUser : function(email, password){
+    console.log(email + password);
+    return axios.get("api/users/" + email +"/" + password
+    // {params : {
+    //       email : email,
+    //       password : password
+    //     }
+    // }
+    );
   }
 };
