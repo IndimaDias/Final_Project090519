@@ -61,16 +61,17 @@ class Home extends React.Component{
     <div className = "container-fluid">
 
       
-      <div className="login-reg-panel">
+      <div className="login-reg-panel col-sm-12 col-md-12">
           <div className="login-info-box">
 
            <h1>BetterDad</h1>
 
           </div>
 
-          <div className="register-info-box">
+          <div className="register-info-box col-sm-12">
             {/* <h2>Don't have an account?</h2> */}
-
+            
+            <div className = "col col-sm-12">
             <p style= {{textAlign : "left"}}><span style={{fontSize:"30px"}}>BetterDad</span> is an app designed to help busy families schedule events,activities,playdates and more. 
                   All while allowing you to assign the tasks
                     to members in the family as well as set up reminders for the event.  </p>
@@ -80,10 +81,10 @@ class Home extends React.Component{
               <button className= "btn btn-outline-secondary" style={{padding:"5px 20px"}}>Register </button>
             </Link>
             
-            
+            </div>
           </div>
 
-          <div className="white-panel">
+          <div className="white-panel col col-sm-12">
             <div className="login-show">
               <h2>LOGIN</h2>
               <form className="needs-validation">
