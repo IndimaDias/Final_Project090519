@@ -8,7 +8,20 @@ router.route("/")
              res.json(dbTodo)
          })
     })
-
+    .get(function(req,res){
+        console.log(req.query);
+        db.Users.findOne({
+            where : {
+                email : req.query.email
+                // password : req.params.password
+            }
+        })
+         .then(dbTodos =>{
+            
+             res.json(dbTodos)
+         })
+         .catch(err => res.status(422).json(err));
+    })
     
 router.route("/:id")   
 .get(function(req,res){
@@ -24,13 +37,13 @@ router.route("/:id")
      .catch(err => res.status(422).json(err));
 })
 
-router.route("/:email/:password")   
+router.route("/:email")   
 .get(function(req,res){
-    console.log(req.params);
+    console.log(req.query);
     db.Users.findOne({
         where : {
-            email : req.params.email,
-            password : req.params.password
+            email : req.query.email
+            // password : req.params.password
         }
     })
      .then(dbTodos =>{
