@@ -111,6 +111,7 @@ class Event extends React.Component{
 
      onCancelClick = () => {
         this.props.close();
+        window.open("/Calendar", "_self");
     }
 
         
