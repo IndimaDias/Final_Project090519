@@ -1,3 +1,13 @@
 nav.navbar.navbar-default {
   margin-bottom: 0;
 }
+
+.navText{
+  color: #2A2D7D;
+  margin-left : 10px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  font-size: 25px;
+  font-weight: bold;
+  top: 30%;
+}
