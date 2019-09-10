@@ -30,11 +30,11 @@ class Formpage extends React.Component {
     parentId : 0,
     phoneNo : "",
     password2:"", 
-    radio : ""
+    radio : "",
+    errorMessage : ""
   }
 
-  handleInputChange = (ev) => {
-    console.log(ev);
+  handleInputChange = (ev) => {    
     const value = ev.target.value;
        
     const name = ev.target.name;
@@ -50,7 +50,7 @@ class Formpage extends React.Component {
 
   onButtonClick = (ev) =>{
     ev.preventDefault();
-    console.log("test");
+   
 
     const userData = {
       firstName : this.state.firstName,
@@ -63,7 +63,19 @@ class Formpage extends React.Component {
       
     }
 
-    console.log(userData)
+    console.log(userData);
+
+    API.validateUser(userData.email)
+    .then(res =>{
+      console.log(res.data);
+      if(res.data){
+        this.setState({errorMessage: "Account with this email already exists"});
+        return;
+      }    
+    })
+    .catch((err)=>{
+      this.setState({errorMessage : "Something went wrong"});
+    })
 
     API.saveUser(userData)
      .then((success) => {
@@ -87,6 +99,9 @@ class Formpage extends React.Component {
             <div className = "formChange">
              
                 <p className="text-center py-2" style = {{fontSize :"20px"}}>Sign up</p>
+                <p className = "text-center text-dangerous" style = {{fontSize :"15px"}}>
+                  {this.state.errorMessage} 
+                </p>
                 <div className="grey-text">
                   <form className="needs-validation">
                     <MDBRow className = "row1"> 

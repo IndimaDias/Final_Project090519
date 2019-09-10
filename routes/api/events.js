@@ -13,7 +13,7 @@ router.route("/")
         console.log(req.query)
         db.Events.findAll({
           where : {
-            userId : req.query.userId
+            userId : req.query.userId 
           }
         })
         .then(dbEvent => {        

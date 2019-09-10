@@ -24,8 +24,9 @@ class Home extends React.Component{
 
     API.validateUser(email,password)
     .then(res =>{
-      if(!res.data){
+      if(!res.data || res.data.password !== password){
         this.setState({errorMessage: "Invalid email or password"});
+        return;
       }
       window.localStorage.setItem('userId', res.data.id);
       window.open("/Calendar", "_self")
