@@ -11,3 +11,10 @@ nav.navbar.navbar-default {
   font-weight: bold;
   top: 30%;
 }
+
+.navSignout{
+  font-size: 15px;
+  top:40%;
+  color: gray;
+  
+}

@@ -3,7 +3,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
+function signout() {
+  window.localStorage.setItem("loggedIn",false);
+  window.localStorage.setItem("userId","");
+}
+
 function Navbar() {
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
@@ -34,16 +40,18 @@ function Navbar() {
 
             
           </li>
-          {/* <li className="nav-item">
+          <li className="nav-item">
             <Link
-              to="/search"
-              className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
+              to="/"
+              className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
+              className = "navText navSignout"
+              onClick = {signout}
             >
-              Message
+              Sign out
             </Link>
 
             
-          </li> */}
+          </li>
 
           {/* <li className="nav-item">
             <Link
