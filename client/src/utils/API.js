@@ -50,14 +50,9 @@ export default {
     return axios.post("api/users/", userData);
   },
 
-  validateUser : function(email, password){
-    console.log(email + password);
-    return axios.get("api/users/" + email +"/" + password
-    // {params : {
-    //       email : email,
-    //       password : password
-    //     }
-    // }
-    );
+  validateUser : function(email){
+   console.log("validateuser");
+    return axios.get("api/users/?email=" + email );//+"/" + password
+  
   }
 };

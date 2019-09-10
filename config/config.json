@@ -1,16 +1,9 @@
 {
   "development": {
-<<<<<<< HEAD
     "username": "root",
     "password": "unhdb1",
     "database": "planner",
     "host": "127.0.0.1",
-=======
-    "username": "k6plf4cm1xi3ue5r",
-    "password": "yl7672f8ttud9up9",
-    "database": "xqxf3vlmbewf6eho",
-    "host": "jj820qt5lpu6krut.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
->>>>>>> 19093037b380ecf93164235c968beb9062026989
     "dialect": "mysql",
     "operatorsAliases": false
   },
