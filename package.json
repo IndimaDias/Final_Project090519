@@ -1,7 +1,7 @@
 {
   "name": "final-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Final project by Indima, Dev, Connolly, and Pete.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -30,5 +30,16 @@
     "reactstrap": "^8.0.1",
     "sequelize": "^5.17.1",
     "twilio": "^3.34.0"
-  }
+  },
+  "bin": {
+    "final-project": "app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IndimaDias/Final_Project090519.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IndimaDias/Final_Project090519/issues"
+  },
+  "homepage": "https://github.com/IndimaDias/Final_Project090519#readme"
 }
